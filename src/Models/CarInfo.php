@@ -1,71 +1,26 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\INTELLICAR\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CarInfo extends Model
-{
-    // 车牌号
-    /**
-     * @example xxx
-     *
-     * @var string
-     */
-    public $licenseNo;
-
-    // 车架号
-    /**
-     * @example xxx
-     *
-     * @var string
-     */
-    public $vin;
-
-    // 发动机号
-    /**
-     * @example xxx
-     *
-     * @var string
-     */
-    public $engineNo;
-
-    // 注册日期
-    /**
-     * @example xxx
-     *
-     * @var string
-     */
-    public $registerDate;
-
-    // 车型
-    /**
-     * @example xxx
-     *
-     * @var string
-     */
-    public $modelCode;
+class CarInfo extends Model {
     protected $_name = [
-        'licenseNo'    => 'license_no',
-        'vin'          => 'vin',
-        'engineNo'     => 'engine_no',
+        'licenseNo' => 'license_no',
+        'vin' => 'vin',
+        'engineNo' => 'engine_no',
         'registerDate' => 'register_date',
-        'modelCode'    => 'model_code',
+        'modelCode' => 'model_code',
     ];
-
-    public function validate()
-    {
+    public function validate() {
         Model::validateRequired('licenseNo', $this->licenseNo, true);
         Model::validateRequired('vin', $this->vin, true);
         Model::validateRequired('engineNo', $this->engineNo, true);
         Model::validateRequired('registerDate', $this->registerDate, true);
         Model::validateRequired('modelCode', $this->modelCode, true);
     }
-
-    public function toMap()
-    {
+    public function toMap() {
         $res = [];
         if (null !== $this->licenseNo) {
             $res['license_no'] = $this->licenseNo;
@@ -82,34 +37,64 @@ class CarInfo extends Model
         if (null !== $this->modelCode) {
             $res['model_code'] = $this->modelCode;
         }
-
         return $res;
     }
-
     /**
      * @param array $map
-     *
      * @return CarInfo
      */
-    public static function fromMap($map = [])
-    {
+    public static function fromMap($map = []) {
         $model = new self();
-        if (isset($map['license_no'])) {
+        if(isset($map['license_no'])){
             $model->licenseNo = $map['license_no'];
         }
-        if (isset($map['vin'])) {
+        if(isset($map['vin'])){
             $model->vin = $map['vin'];
         }
-        if (isset($map['engine_no'])) {
+        if(isset($map['engine_no'])){
             $model->engineNo = $map['engine_no'];
         }
-        if (isset($map['register_date'])) {
+        if(isset($map['register_date'])){
             $model->registerDate = $map['register_date'];
         }
-        if (isset($map['model_code'])) {
+        if(isset($map['model_code'])){
             $model->modelCode = $map['model_code'];
         }
-
         return $model;
     }
+    // 车牌号
+    /**
+     * @example xxx
+     * @var string
+     */
+    public $licenseNo;
+
+    // 车架号
+    /**
+     * @example xxx
+     * @var string
+     */
+    public $vin;
+
+    // 发动机号
+    /**
+     * @example xxx
+     * @var string
+     */
+    public $engineNo;
+
+    // 注册日期
+    /**
+     * @example xxx
+     * @var string
+     */
+    public $registerDate;
+
+    // 车型
+    /**
+     * @example xxx
+     * @var string
+     */
+    public $modelCode;
+
 }

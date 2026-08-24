@@ -1,13 +1,82 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\INTELLICAR\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class RegisterCdsqScratchesResponse extends Model
-{
+class RegisterCdsqScratchesResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'responseCode' => 'response_code',
+        'responseMsg' => 'response_msg',
+        'policyNo' => 'policy_no',
+        'policyStart' => 'policy_start',
+        'policyEnd' => 'policy_end',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->responseCode) {
+            $res['response_code'] = $this->responseCode;
+        }
+        if (null !== $this->responseMsg) {
+            $res['response_msg'] = $this->responseMsg;
+        }
+        if (null !== $this->policyNo) {
+            $res['policy_no'] = $this->policyNo;
+        }
+        if (null !== $this->policyStart) {
+            $res['policy_start'] = $this->policyStart;
+        }
+        if (null !== $this->policyEnd) {
+            $res['policy_end'] = $this->policyEnd;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return RegisterCdsqScratchesResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['response_code'])){
+            $model->responseCode = $map['response_code'];
+        }
+        if(isset($map['response_msg'])){
+            $model->responseMsg = $map['response_msg'];
+        }
+        if(isset($map['policy_no'])){
+            $model->policyNo = $map['policy_no'];
+        }
+        if(isset($map['policy_start'])){
+            $model->policyStart = $map['policy_start'];
+        }
+        if(isset($map['policy_end'])){
+            $model->policyEnd = $map['policy_end'];
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -55,85 +124,5 @@ class RegisterCdsqScratchesResponse extends Model
      * @var string
      */
     public $policyEnd;
-    protected $_name = [
-        'reqMsgId'     => 'req_msg_id',
-        'resultCode'   => 'result_code',
-        'resultMsg'    => 'result_msg',
-        'responseCode' => 'response_code',
-        'responseMsg'  => 'response_msg',
-        'policyNo'     => 'policy_no',
-        'policyStart'  => 'policy_start',
-        'policyEnd'    => 'policy_end',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->responseCode) {
-            $res['response_code'] = $this->responseCode;
-        }
-        if (null !== $this->responseMsg) {
-            $res['response_msg'] = $this->responseMsg;
-        }
-        if (null !== $this->policyNo) {
-            $res['policy_no'] = $this->policyNo;
-        }
-        if (null !== $this->policyStart) {
-            $res['policy_start'] = $this->policyStart;
-        }
-        if (null !== $this->policyEnd) {
-            $res['policy_end'] = $this->policyEnd;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return RegisterCdsqScratchesResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['response_code'])) {
-            $model->responseCode = $map['response_code'];
-        }
-        if (isset($map['response_msg'])) {
-            $model->responseMsg = $map['response_msg'];
-        }
-        if (isset($map['policy_no'])) {
-            $model->policyNo = $map['policy_no'];
-        }
-        if (isset($map['policy_start'])) {
-            $model->policyStart = $map['policy_start'];
-        }
-        if (isset($map['policy_end'])) {
-            $model->policyEnd = $map['policy_end'];
-        }
-
-        return $model;
-    }
 }

@@ -1,13 +1,57 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\INTELLICAR\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryUsedcarSeriesRequest extends Model
-{
+class QueryUsedcarSeriesRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'brandId' => 'brand_id',
+        'sceneCode' => 'scene_code',
+    ];
+    public function validate() {
+        Model::validateRequired('brandId', $this->brandId, true);
+        Model::validateRequired('sceneCode', $this->sceneCode, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->brandId) {
+            $res['brand_id'] = $this->brandId;
+        }
+        if (null !== $this->sceneCode) {
+            $res['scene_code'] = $this->sceneCode;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryUsedcarSeriesRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['brand_id'])){
+            $model->brandId = $map['brand_id'];
+        }
+        if(isset($map['scene_code'])){
+            $model->sceneCode = $map['scene_code'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -30,59 +74,5 @@ class QueryUsedcarSeriesRequest extends Model
      * @var string
      */
     public $sceneCode;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'brandId'           => 'brand_id',
-        'sceneCode'         => 'scene_code',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('brandId', $this->brandId, true);
-        Model::validateRequired('sceneCode', $this->sceneCode, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->brandId) {
-            $res['brand_id'] = $this->brandId;
-        }
-        if (null !== $this->sceneCode) {
-            $res['scene_code'] = $this->sceneCode;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryUsedcarSeriesRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['brand_id'])) {
-            $model->brandId = $map['brand_id'];
-        }
-        if (isset($map['scene_code'])) {
-            $model->sceneCode = $map['scene_code'];
-        }
-
-        return $model;
-    }
 }

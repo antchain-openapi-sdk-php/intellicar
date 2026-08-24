@@ -1,13 +1,96 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\INTELLICAR\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryUsedcarSeriesResponse extends Model
-{
+use AntChain\INTELLICAR\Models\LetterInfo;
+
+class QueryUsedcarSeriesResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'brandid' => 'brandid',
+        'serieslist' => 'serieslist',
+        'brandname' => 'brandname',
+        'code' => 'code',
+        'msg' => 'msg',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->brandid) {
+            $res['brandid'] = $this->brandid;
+        }
+        if (null !== $this->serieslist) {
+            $res['serieslist'] = [];
+            if(null !== $this->serieslist && is_array($this->serieslist)){
+                $n = 0;
+                foreach($this->serieslist as $item){
+                    $res['serieslist'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->brandname) {
+            $res['brandname'] = $this->brandname;
+        }
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
+        }
+        if (null !== $this->msg) {
+            $res['msg'] = $this->msg;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryUsedcarSeriesResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['brandid'])){
+            $model->brandid = $map['brandid'];
+        }
+        if(isset($map['serieslist'])){
+            if(!empty($map['serieslist'])){
+                $model->serieslist = [];
+                $n = 0;
+                foreach($map['serieslist'] as $item) {
+                    $model->serieslist[$n++] = null !== $item ? LetterInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['brandname'])){
+            $model->brandname = $map['brandname'];
+        }
+        if(isset($map['code'])){
+            $model->code = $map['code'];
+        }
+        if(isset($map['msg'])){
+            $model->msg = $map['msg'];
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -55,97 +138,5 @@ class QueryUsedcarSeriesResponse extends Model
      * @var string
      */
     public $msg;
-    protected $_name = [
-        'reqMsgId'   => 'req_msg_id',
-        'resultCode' => 'result_code',
-        'resultMsg'  => 'result_msg',
-        'brandid'    => 'brandid',
-        'serieslist' => 'serieslist',
-        'brandname'  => 'brandname',
-        'code'       => 'code',
-        'msg'        => 'msg',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->brandid) {
-            $res['brandid'] = $this->brandid;
-        }
-        if (null !== $this->serieslist) {
-            $res['serieslist'] = [];
-            if (null !== $this->serieslist && \is_array($this->serieslist)) {
-                $n = 0;
-                foreach ($this->serieslist as $item) {
-                    $res['serieslist'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->brandname) {
-            $res['brandname'] = $this->brandname;
-        }
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
-        if (null !== $this->msg) {
-            $res['msg'] = $this->msg;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryUsedcarSeriesResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['brandid'])) {
-            $model->brandid = $map['brandid'];
-        }
-        if (isset($map['serieslist'])) {
-            if (!empty($map['serieslist'])) {
-                $model->serieslist = [];
-                $n                 = 0;
-                foreach ($map['serieslist'] as $item) {
-                    $model->serieslist[$n++] = null !== $item ? LetterInfo::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['brandname'])) {
-            $model->brandname = $map['brandname'];
-        }
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
-        if (isset($map['msg'])) {
-            $model->msg = $map['msg'];
-        }
-
-        return $model;
-    }
 }

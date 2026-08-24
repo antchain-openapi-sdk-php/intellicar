@@ -9,7 +9,7 @@
 ### Composer
 
 ```bash
-composer require antchain/intellicar
+composer require antchain/INTELLICAR
 ```
 
 ## 问题
